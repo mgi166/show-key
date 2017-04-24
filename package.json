@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": {},
   "author": "mgi166",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
 }
