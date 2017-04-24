@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "ShowKey",
+  "version": "0.0.1",
+  "default_locale": "en",
+  "description": "Show key in browser",
+  "author": "mgi166",
+  "background": {
+    "persistent": false
+  }
+}
