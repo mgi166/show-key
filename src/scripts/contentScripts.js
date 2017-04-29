@@ -2,7 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import Notification from "../views/index.js";
 
+const identifier = "show-key";
 const element = document.createElement('div');
-element.id = "show-key";
+
+element.id = identifier;
 document.body.appendChild(element);
-render(<Notification />, document.getElementById("show-key"));
+render(<Notification />, document.getElementById(identifier));
