@@ -3,11 +3,11 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
   entry: {
-    path: path.join(__dirname, 'src'),
+    contentScripts: path.join(__dirname, 'src', 'scripts', 'contentScripts.js'),
   },
   output: {
-    path: path.join(__dirname, "scripts"),
-    filename: 'scripts/[name].bundle.js',
+    path: path.join(__dirname, "dist"),
+    filename: 'dist/[name].bundle.js',
   },
   target: 'web',
   module: {
