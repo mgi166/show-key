@@ -7,7 +7,7 @@ export default {
   },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: 'dist/[name].bundle.js',
+    filename: 'scripts/[name].bundle.js',
   },
   target: 'web',
   devServer: {
