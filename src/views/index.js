@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 
-class ShowKeyNotification extends Component {
+export default class ShowKeyNotification extends Component {
   render() {
     return(
       <div id="test-show-key">
@@ -9,5 +8,3 @@ class ShowKeyNotification extends Component {
     );
   }
 }
-
-render(<ShowKeyNotification />, document.getElementById("show-key"));
