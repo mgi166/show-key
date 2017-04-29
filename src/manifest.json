@@ -6,7 +6,7 @@
   "author": "mgi166",
   "content_scripts": [
     {
-      "matches": ["http://github.com/*", "https://github.com/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["scripts/contentScripts.bundle.js"]
     }
   ]
