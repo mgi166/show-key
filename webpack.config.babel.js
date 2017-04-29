@@ -20,6 +20,10 @@ export default {
       {
         test: /\.js$/,
         use: { loader: 'babel-loader' }
+      },
+      {
+        test: /\.jsx$/,
+        use: { loader: 'babel-loader' }
       }
     ]
   },
