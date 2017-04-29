@@ -10,6 +10,11 @@ export default {
     filename: 'dist/[name].bundle.js',
   },
   target: 'web',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9000,
+    hot: true,
+  },
   module: {
     rules: [
       {
