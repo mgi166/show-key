@@ -23,7 +23,7 @@ export default {
       [
         {
           from: path.join(__dirname, 'src', 'manifest.json'),
-          to: path.join(__dirname, 'scripts'),
+          to: path.join(__dirname, 'dist'),
         }
       ]
     )
