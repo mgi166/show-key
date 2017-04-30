@@ -9,5 +9,8 @@
       "matches": ["http://*/*", "https://*/*"],
       "js": ["scripts/contentScripts.bundle.js"]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
