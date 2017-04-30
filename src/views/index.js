@@ -35,7 +35,6 @@ export default class ShowKeyNotification extends Component {
     return(
       <NotificationStack
         isActive="true"
-        message="!!!!!"
         notifications={this.state.notifications.toArray()}
         onDismiss={
           notification => this.setState(
