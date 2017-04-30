@@ -16,7 +16,14 @@ export default class OptionsForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <label>EventName</label>
-        <button type="submit" />
+        <br />
+        <input type="radio" name="eventName" value="keydown" defaultChecked={this.state.eventName === "keydown"}/> keydown
+        <br />
+        <input type="radio" name="eventName" value="keypress" defaultChecked={this.state.eventName === "keypress"}/> keypress
+        <br />
+        <input type="radio" name="eventName" value="keyup" defaultChecked={this.state.eventName === "keyup"}/> keyup
+        <br />
+        <button type="submit">Save</button>
       </form>
     );
   }
