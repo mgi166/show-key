@@ -4,7 +4,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 export default {
   entry: {
     contentScripts: path.join(__dirname, 'src', 'scripts', 'contentScripts.js'),
-    notification: path.join(__dirname, 'src', 'views', 'index.js'),
+    notification: path.join(__dirname, 'src', 'views', 'notification.js'),
   },
   output: {
     path: path.join(__dirname, "dist"),

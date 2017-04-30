@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Notification from "../views/index.js";
+import Notification from "../views/notification";
 
 const identifier = "show-key";
 const element = document.createElement('div');
