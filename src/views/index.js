@@ -6,7 +6,8 @@ export default class ShowKeyNotification extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notifications: OrderedSet()
+      notifications: OrderedSet(),
+      key: 0,
     };
   }
 
@@ -17,15 +18,16 @@ export default class ShowKeyNotification extends Component {
   }
 
   addNotification(event) {
-    const { notifications } = this.ShowKeyNotification.state;
+    const { notifications, key } = this.ShowKeyNotification.state;
+    const newKey = key + 1;
     const newNotifications = notifications.add(
       {
         message: event.key,
-        key: "!!!",
+        key: newKey,
       }
     );
     return this.ShowKeyNotification.setState(
-      { notifications: newNotifications }
+      { notifications: newNotifications, key: newKey }
     );
   }
 
@@ -37,7 +39,7 @@ export default class ShowKeyNotification extends Component {
         notifications={this.state.notifications.toArray()}
         onDismiss={
           notification => this.setState(
-            { notifications: this.state.Notification.delete(notification) }
+            { notifications: this.state.notifications.delete(notification) }
           )
         }
       />
