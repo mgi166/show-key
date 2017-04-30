@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 export default class OptionsForm extends Component {
+  constructor(props) {
+    super(props);
+
+    chrome.storage.sync.get('eventName', (storage) => {
+      this.state = {
+        eventName: storage['eventName']
+      };
+    });
+  }
+
   onSubmit(e) {
     e.preventDefault();
     const target = e.target;
