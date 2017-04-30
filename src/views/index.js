@@ -10,15 +10,21 @@ export default class ShowKeyNotification extends Component {
     };
   }
 
-  addKeyboardEvent(event) {
-    const { notifications } = this.state;
+  componentDidMount() {
+    // NOTE: Save reference self on window for.
+    window.ShowKeyNotification = this;
+    window.addEventListener("keydown", this.addNotification);
+  }
+
+  addNotification(event) {
+    const { notifications } = this.ShowKeyNotification.state;
     const newNotifications = notifications.add(
       {
         message: event.key,
         key: "!!!",
       }
     );
-    return this.setState(
+    return this.ShowKeyNotification.setState(
       { notifications: newNotifications }
     );
   }
