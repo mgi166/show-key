@@ -29,10 +29,6 @@ export default class ShowKeyNotification extends Component {
     );
   }
 
-  componentWillUnmount() {
-    console.log("unmount");
-  }
-
   render() {
     return(
       <NotificationStack
