@@ -12,5 +12,6 @@
   ],
   "permissions": [
     "storage"
-  ]
+  ],
+  "options_page": "views/options.html"
 }

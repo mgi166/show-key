@@ -5,6 +5,7 @@ export default {
   entry: {
     contentScripts: path.join(__dirname, 'src', 'scripts', 'contentScripts.js'),
     notification: path.join(__dirname, 'src', 'views', 'notification.js'),
+    options: path.join(__dirname, 'src', 'views', 'options.js'),
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -34,6 +35,10 @@ export default {
         {
           from: path.join(__dirname, 'src', 'manifest.json'),
           to: path.join(__dirname, 'dist'),
+        },
+        {
+          from: path.join(__dirname, 'src', 'views', 'options.html'),
+          to: path.join(__dirname, 'dist', 'views'),
         }
       ]
     )
