@@ -12,13 +12,11 @@ export default class ShowKeyNotification extends Component {
   }
 
   componentDidMount() {
-    // NOTE: Save reference self on window for.
-    window.ShowKeyNotification = this;
-    window.addEventListener("keydown", this.addNotification);
+    window.addEventListener("keydown", this.addNotification.bind(this));
   }
 
   addNotification(event) {
-    const { notifications, key } = this.ShowKeyNotification.state;
+    const { notifications, key } = this.state;
     const newKey = key + 1;
     const newNotifications = notifications.add(
       {
@@ -26,7 +24,7 @@ export default class ShowKeyNotification extends Component {
         key: newKey,
       }
     );
-    return this.ShowKeyNotification.setState(
+    return this.setState(
       { notifications: newNotifications, key: newKey }
     );
   }
