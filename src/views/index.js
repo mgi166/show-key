@@ -35,18 +35,16 @@ export default class ShowKeyNotification extends Component {
 
   render() {
     return(
-      <div id="show-key-test">
-        <NotificationStack
-          isActive="true"
-          message="!!!!!"
-          notifications={this.state.notifications.toArray()}
-          onDismiss={
-            notification => this.setState(
-              { notifications: this.state.Notification.delete(notification) }
-            )
-          }
-        />
-      </div>
+      <NotificationStack
+        isActive="true"
+        message="!!!!!"
+        notifications={this.state.notifications.toArray()}
+        onDismiss={
+          notification => this.setState(
+            { notifications: this.state.Notification.delete(notification) }
+          )
+        }
+      />
     );
   }
 }
