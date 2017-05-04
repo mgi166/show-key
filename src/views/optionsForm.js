@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Subheader from 'material-ui/Subheader';
+import TextField from 'material-ui/TextField';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
@@ -17,7 +18,8 @@ export default class OptionsForm extends Component {
 
     chrome.storage.sync.set(
       {
-        eventName: target.eventName.value
+        eventName: target.eventName.value,
+        dismissAfter: Number(target.dismissAfter.value) || 2000,
       }
     );
   }
@@ -29,8 +31,8 @@ export default class OptionsForm extends Component {
 
     return (
       <div>
-        <Subheader style={subheaderStyle}>EventName</Subheader>
         <form onSubmit={this.onSubmit}>
+          <Subheader style={subheaderStyle}>EventName</Subheader>
           <RadioButtonGroup name="eventName" defaultSelected={this.state.eventName}>
             <RadioButton
               label="keydown"
@@ -45,7 +47,17 @@ export default class OptionsForm extends Component {
               value="keyup"
             />
           </RadioButtonGroup>
-          <RaisedButton label="save" />
+
+          <Subheader style={subheaderStyle}>Dismiss milliseconds</Subheader>
+          <TextField
+            hintText="default is 2000"
+            name="dismissAfter"
+            defaultValue={this.state.dismissAfter}
+          />
+
+          <br />
+
+          <RaisedButton label="save" primary={true} type="submit"/>
         </form>
       </div>
     );
