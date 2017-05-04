@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import OptionsForm from './optionsForm';
+import Config from './../scripts/config';
 
-render(<OptionsForm />, document.querySelector("#options"));
+const config = new Config;
+
+config.load()
+  .then((config) => {
+    render(<OptionsForm config={config} />, document.querySelector("#options"));
+  });
