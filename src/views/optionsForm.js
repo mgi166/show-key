@@ -3,6 +3,8 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
+import Snackbar from 'material-ui/Snackbar';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
@@ -22,6 +24,8 @@ export default class OptionsForm extends Component {
         dismissAfter: Number(target.dismissAfter.value) || 2000,
       }
     );
+
+    this.setState({ snackbarOpen: true });
   }
 
   render() {
@@ -31,7 +35,7 @@ export default class OptionsForm extends Component {
 
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit.bind(this)}>
           <Subheader style={subheaderStyle}>EventName</Subheader>
           <RadioButtonGroup name="eventName" defaultSelected={this.state.eventName}>
             <RadioButton
@@ -58,6 +62,12 @@ export default class OptionsForm extends Component {
           <br />
 
           <RaisedButton label="save" primary={true} type="submit"/>
+          <Snackbar
+            open={this.state.snackbarOpen || false}
+            message="Save success!"
+            autoHideDuration={4000}
+            contentStyle={{ 'text-align': 'center' }}
+          />
         </form>
       </div>
     );
