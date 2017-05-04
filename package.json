@@ -23,7 +23,6 @@
     "webpack": "^2.4.1"
   },
   "dependencies": {
-    "asyncawait": "^1.0.6",
-    "bluebird": "^3.5.0"
+    "asyncawait": "^1.0.6"
   }
 }
