@@ -22,5 +22,7 @@
     "react-notification": "^6.6.1",
     "webpack": "^2.4.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "material-ui": "^0.18.0"
+  }
 }
