@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Notification from "../scripts/notification";
+import Notification from "../components/notification";
 import Config from './config';
 
 const identifier = "show-key";
