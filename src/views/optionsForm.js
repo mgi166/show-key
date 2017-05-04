@@ -36,7 +36,7 @@ export default class OptionsForm extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit.bind(this)}>
-          <Subheader style={subheaderStyle}>EventName</Subheader>
+          <Subheader style={subheaderStyle}>Event name</Subheader>
           <RadioButtonGroup name="eventName" defaultSelected={this.state.eventName}>
             <RadioButton
               label="keydown"
@@ -52,9 +52,9 @@ export default class OptionsForm extends Component {
             />
           </RadioButtonGroup>
 
-          <Subheader style={subheaderStyle}>Dismiss milliseconds</Subheader>
+          <Subheader style={subheaderStyle}>Show duration (milliseconds)</Subheader>
           <TextField
-            hintText="default is 2000"
+            hintText="default is 2000[ms]"
             name="dismissAfter"
             defaultValue={this.state.dismissAfter}
           />
