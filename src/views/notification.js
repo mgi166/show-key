@@ -8,11 +8,12 @@ export default class ShowKeyNotification extends Component {
     this.state = {
       notifications: OrderedSet(),
       key: 0,
+      config: props.config
     };
   }
 
   componentDidMount() {
-    window.addEventListener("keydown", this.addNotification.bind(this));
+    window.addEventListener(this.state.config.eventName, this.addNotification.bind(this));
   }
 
   addNotification(event) {
@@ -33,6 +34,7 @@ export default class ShowKeyNotification extends Component {
     return(
       <NotificationStack
         notifications={this.state.notifications.toArray()}
+        dismissAfter={this.state.config.dismissAfter}
         onDismiss={
           notification => this.setState(
             { notifications: this.state.notifications.delete(notification) }
