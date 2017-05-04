@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Promise from 'bluebird';
 
 export default class OptionsForm extends Component {
   constructor(props) {
