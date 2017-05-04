@@ -4,21 +4,7 @@ import Promise from 'bluebird';
 export default class OptionsForm extends Component {
   constructor(props) {
     super(props);
-
-    (async () => {
-      const config = await this.fetchConfig();
-      console.log("2");
-    })();
-  }
-
-  fetchConfig() {
-    const keys = ["eventName"];
-
-    return new Promise((resolve, reject) => {
-      chrome.storage.sync.get(keys, (config) => {
-        resolve(config);
-      });
-    });
+    this.state = props.config;
   }
 
   onSubmit(e) {
