@@ -66,7 +66,7 @@ export default class OptionsForm extends Component {
             open={this.state.snackbarOpen || false}
             message="Save success!"
             autoHideDuration={4000}
-            contentStyle={{ 'text-align': 'center' }}
+            contentStyle={{ textAlign: 'center' }}
           />
         </form>
       </div>
