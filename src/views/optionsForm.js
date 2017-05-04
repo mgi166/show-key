@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import Subheader from 'material-ui/Subheader';
 
 export default class OptionsForm extends Component {
   constructor(props) {
@@ -18,18 +21,31 @@ export default class OptionsForm extends Component {
   }
 
   render() {
+    const subheaderStyle = {
+      fontSize: 20,
+    };
+
     return (
-      <form onSubmit={this.onSubmit}>
-        <label>EventName</label>
-        <br />
-        <input type="radio" name="eventName" value="keydown" defaultChecked={this.state.eventName === "keydown"}/> keydown
-        <br />
-        <input type="radio" name="eventName" value="keypress" defaultChecked={this.state.eventName === "keypress"}/> keypress
-        <br />
-        <input type="radio" name="eventName" value="keyup" defaultChecked={this.state.eventName === "keyup"}/> keyup
-        <br />
-        <button type="submit">Save</button>
-      </form>
+      <div>
+        <Subheader style={subheaderStyle}>EventName</Subheader>
+        <form onSubmit={this.onSubmit}>
+          <RadioButtonGroup name="eventName" defaultSelected={this.state.eventName}>
+            <RadioButton
+              label="keydown"
+              value="keydown"
+            />
+            <RadioButton
+              label="keypress"
+              value="keypress"
+            />
+            <RadioButton
+              label="keyup"
+              value="keyup"
+            />
+          </RadioButtonGroup>
+          <RaisedButton label="save" />
+        </form>
+      </div>
     );
   }
 };
