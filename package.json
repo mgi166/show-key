@@ -7,6 +7,8 @@
   "author": "mgi166",
   "license": "MIT",
   "scripts": {
+    "webpack:clean": "rm -r dist/",
+    "webpack:build": "webpack",
     "webpack:watch": "webpack --watch"
   },
   "devDependencies": {
