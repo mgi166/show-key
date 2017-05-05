@@ -19,13 +19,11 @@
     "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "immutable": "^3.8.1",
+    "material-ui": "^0.18.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-notification": "^6.6.1",
+    "react-tap-event-plugin": "^2.0.1",
     "webpack": "^2.4.1"
-  },
-  "dependencies": {
-    "material-ui": "^0.18.0",
-    "react-tap-event-plugin": "^2.0.1"
   }
 }
